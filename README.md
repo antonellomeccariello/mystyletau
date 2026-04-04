@@ -13,7 +13,7 @@ Due nuovi simboli personalizzati per la topologia in LaTeX.
 3. Aggiungi `\usepackage{mystyletau}` nel preambolo.
 
 ## SE HAI L'ULTIMA VERSIONE LATEX: 
-È sufficiente aggiungere '\usepackage{mystyletau}'
+È sufficiente aggiungere '\usepackage{mystyletau}' nel preambolo.
 
 ## Link ufficiali
 - **CTAN:** [https://ctan.org/pkg/mystyletau](https://ctan.org/pkg/mystyletau)
