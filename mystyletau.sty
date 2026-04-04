@@ -1,0 +1,138 @@
+% mystyletau.sty
+% Copyright 2026 Antonello Meccariello & Francesco Meccariello
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3c
+% of this license or (at your option) any later version.
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{mystyletau}[2026/04/04 v1.0 Custom Tau glyphs for topology]
+\RequirePackage{scalerel}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx} 
+
+% --- LOGICA DI RICONOSCIMENTO ---
+\def\tau@getfirst#1#2\tau@stop{#1}
+
+\newcommand{\ifsubisdigit}[3]{\ifnum\ifx#10 1\else\ifx#11 1\else\ifx#12 1\else\ifx#13 1\else\ifx#14 1\else\ifx#15 1\else\ifx#16 1\else\ifx#17 1\else\ifx#18 1\else\ifx#19 1\else 0\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi=1 #2\else #3\fi}
+\newcommand{\ifsubisX}[3]{\ifx#1X #2\else #3\fi}
+\newcommand{\ifsubisY}[3]{\ifx#1Y #2\else #3\fi}
+\newcommand{\ifsubisA}[3]{\ifx#1A #2\else #3\fi}
+\newcommand{\ifsubisB}[3]{\ifx#1B #2\else #3\fi}
+\newcommand{\ifsubisD}[3]{\ifx#1D #2\else #3\fi}
+\newcommand{\ifsubisE}[3]{\ifx#1E #2\else #3\fi}
+\newcommand{\ifsubisF}[3]{\ifx#1F #2\else #3\fi}
+\newcommand{\ifsubisG}[3]{\ifx#1G #2\else #3\fi}
+\newcommand{\ifsubisH}[3]{\ifx#1H #2\else #3\fi}
+\newcommand{\ifsubisI}[3]{\ifx#1I #2\else #3\fi}
+\newcommand{\ifsubisJ}[3]{\ifx#1J #2\else #3\fi}
+\newcommand{\ifsubisK}[3]{\ifx#1K #2\else #3\fi}
+\newcommand{\ifsubisL}[3]{\ifx#1L #2\else #3\fi}
+\newcommand{\ifsubisM}[3]{\ifx#1M #2\else #3\fi}
+\newcommand{\ifsubisN}[3]{\ifx#1N #2\else #3\fi}
+\newcommand{\ifsubisP}[3]{\ifx#1P #2\else #3\fi}
+\newcommand{\ifsubisR}[3]{\ifx#1R #2\else #3\fi}
+\newcommand{\ifsubisS}[3]{\ifx#1S #2\else #3\fi}
+\newcommand{\ifsubisO}[3]{\ifx#1O #2\else #3\fi}
+\newcommand{\ifsubisV}[3]{\ifx#1V #2\else #3\fi}
+\newcommand{\ifsubisW}[3]{\ifx#1W #2\else #3\fi}
+\newcommand{\ifsubisZ}[3]{\ifx#1Z #2\else #3\fi}
+
+\newcommand{\ifsubisbeta}[3]{\ifx#1\beta #2\else #3\fi}
+\newcommand{\ifsubisrho}[3]{\ifx#1\rho #2\else #3\fi}
+
+\newcommand{\tau@dispatch}[3]{%
+  \edef\tau@temp{\expandafter\tau@getfirst#1\tau@stop}%
+  \ifcat\relax\noexpand\tau@temp
+    \ifx\tau@temp\mathcal #3\else
+    \ifx\tau@temp\mathbb #3\else
+    \ifx\tau@temp\mathfrak #3\else
+      #2%
+    \fi\fi\fi
+  \else
+    #3%
+  \fi
+}
+
+% --- \atau ---
+\newcommand{\atau}{%
+  \ensuremath{%
+    \mathord{\scalerel*{\raisebox{-0.1ex}{\includegraphics{mytau2}}}{[}}%
+    \@ifnextchar_{ \atau@sub }{ \mkern 0.2mu }%
+  }%
+}
+\def\atau@sub_#1{%
+  \ifsubisdigit{#1}{\mkern-0.3mu_{#1}\mkern-0.2mu}{% 1
+  \ifsubisX{#1}{\mkern-2.2mu_{#1}\mkern-0.2mu}{%    2
+  \ifsubisY{#1}{\mkern-0.8mu_{#1}\mkern-0.2mu}{%    3
+  \ifsubisA{#1}{\mkern-2.1mu_{#1}\mkern-0.2mu}{%    4
+  \ifsubisB{#1}{\mkern-2.1mu_{#1}\mkern-0.2mu}{%    5
+  \ifsubisD{#1}{\mkern-2.1mu_{#1}\mkern-0.2mu}{%    6
+  \ifsubisE{#1}{\mkern-2.1mu_{#1}\mkern-0.2mu}{%    7
+  \ifsubisF{#1}{\mkern-2.1mu_{#1}\mkern-0.2mu}{%    8
+  \ifsubisG{#1}{\mkern-1.1mu_{#1}\mkern-0.2mu}{%    9
+  \ifsubisH{#1}{\mkern-2.1mu_{#1}\mkern-0.2mu}{%    10
+  \ifsubisI{#1}{\mkern-1.4mu_{#1}\mkern-0.2mu}{%    11
+  \ifsubisJ{#1}{\mkern-2.1mu_{#1}\mkern-0.2mu}{%    12
+  \ifsubisK{#1}{\mkern-2.1mu_{#1}\mkern-0.2mu}{%    13
+  \ifsubisL{#1}{\mkern-2.1mu_{#1}\mkern-0.2mu}{%    14
+  \ifsubisM{#1}{\mkern-2.1mu_{#1}\mkern-0.2mu}{%    15
+  \ifsubisN{#1}{\mkern-2.1mu_{#1}\mkern-0.2mu}{%    16
+  \ifsubisP{#1}{\mkern-2.1mu_{#1}\mkern-0.2mu}{%    17
+  \ifsubisR{#1}{\mkern-2.1mu_{#1}\mkern-0.2mu}{%    18
+  \ifsubisS{#1}{\mkern-2.1mu_{#1}\mkern-0.2mu}{%    19
+  \ifsubisO{#1}{\mkern-2.1mu_{#1}\mkern-0.2mu}{%    20
+  \ifsubisV{#1}{\mkern-1.2mu_{#1}\mkern-0.2mu}{%    21
+  \ifsubisW{#1}{\mkern-1.2mu_{#1}\mkern-0.2mu}{%    22
+  \ifsubisZ{#1}{\mkern-2.1mu_{#1}\mkern-0.2mu}{%    23
+  \tau@dispatch{#1}{%
+    \ifsubisbeta{#1}{\mkern-2mu_{#1}\mkern-0.2mu}{%
+    \ifsubisrho{#1}{\mkern-1.7mu_{#1}\mkern-0.2mu}{
+      \mkern-0.2mu_{#1}\mkern-0.2mu}}%
+  }{%
+    \mkern-2mu_{#1}\mkern-0.2mu
+  }%
+  }}}}}}}}}}}}}}}}}}}}}}} % <--- Esattamente 23 graffe!
+}
+
+% --- \vtau ---
+\newcommand{\vtau}{%
+\ensuremath{%
+\mathord{\scalerel*{\raisebox{-0.1ex}{\includegraphics{mytau}}}{[}}%
+\@ifnextchar_{ \vtau@sub }{ \mkern 0.2mu }%
+}%
+}
+\def\vtau@sub_#1{%
+\ifsubisdigit{#1}{\mkern-0.3mu_{#1}\mkern-0.2mu}{% 1
+\ifsubisX{#1}{\mkern-2.2mu_{#1}\mkern-0.2mu}{%    2
+\ifsubisY{#1}{\mkern-0.8mu_{#1}\mkern-0.2mu}{%    3
+\ifsubisA{#1}{\mkern-2.3mu_{#1}\mkern-0.2mu}{%    4
+\ifsubisB{#1}{\mkern-2.1mu_{#1}\mkern-0.2mu}{%    5
+\ifsubisD{#1}{\mkern-2.1mu_{#1}\mkern-0.2mu}{%    6
+\ifsubisE{#1}{\mkern-2.1mu_{#1}\mkern-0.2mu}{%    7
+\ifsubisF{#1}{\mkern-2.1mu_{#1}\mkern-0.2mu}{%    8
+\ifsubisG{#1}{\mkern-1.1mu_{#1}\mkern-0.2mu}{%    9
+\ifsubisH{#1}{\mkern-2.1mu_{#1}\mkern-0.2mu}{%    10
+\ifsubisI{#1}{\mkern-1.4mu_{#1}\mkern-0.2mu}{%    11
+\ifsubisJ{#1}{\mkern-2.1mu_{#1}\mkern-0.2mu}{%    12
+\ifsubisK{#1}{\mkern-2.1mu_{#1}\mkern-0.2mu}{%    13
+\ifsubisL{#1}{\mkern-2.1mu_{#1}\mkern-0.2mu}{%    14
+\ifsubisM{#1}{\mkern-2.1mu_{#1}\mkern-0.2mu}{%    15
+\ifsubisN{#1}{\mkern-2.1mu_{#1}\mkern-0.2mu}{%    16
+\ifsubisP{#1}{\mkern-2.1mu_{#1}\mkern-0.2mu}{%    17
+\ifsubisR{#1}{\mkern-2.1mu_{#1}\mkern-0.2mu}{%    18
+\ifsubisS{#1}{\mkern-2.1mu_{#1}\mkern-0.2mu}{%    19
+\ifsubisO{#1}{\mkern-1.5mu_{#1}\mkern-0.2mu}{%    20
+\ifsubisV{#1}{\mkern-1.2mu_{#1}\mkern-0.2mu}{%    21
+\ifsubisW{#1}{\mkern-1.2mu_{#1}\mkern-0.2mu}{%    22
+\ifsubisZ{#1}{\mkern-2.2mu_{#1}\mkern-0.2mu}{%    23
+\tau@dispatch{#1}{%
+\ifsubisbeta{#1}{\mkern-2mu_{#1}\mkern-0.2mu}{%
+\ifsubisrho{#1}{\mkern-1.7mu_{#1}\mkern-0.2mu}{
+  \mkern-0.2mu_{#1}\mkern-0.2mu}}%
+}{%
+\mkern-2mu_{#1}\mkern-0.2mu
+}%
+}}}}}}}}}}}}}}}}}}}}}}} % <--- Esattamente 23 graffe!
+}
+
+\endinput
