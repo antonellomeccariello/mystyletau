@@ -1,0 +1,60 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{mystyletau} 
+\usepackage[margin=2.5cm]{geometry} 
+\usepackage{hyperref} 
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    pdftitle={The mystyletau package},
+}
+
+\usepackage{titling}
+\setlength{\droptitle}{-1.5cm} 
+
+\title{The \texttt{mystyletau} package}
+\author{\href{mailto:antonellomeccariello234@gmail.com}{Antonello Meccariello} 
+  \& 
+  \href{mailto:meccariellofrancesco87@gmail.com}{Francesco Meccariello}%
+}
+\date{Version 2.0 --- April 2026}
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+The \texttt{mystyletau} package introduces two custom glyphs for the letter $\tau$. While the standard notation for a topological space $(X, \tau_X)$ is functional, the authors believe these variants offer superior aesthetic appeal for denoting topologies or algebraic structures.
+
+\section{New in Version 2.0}
+Version 2.0 marks a significant technical shift. The symbols are no longer external PDF images; they are now implemented as true vector glyphs within a dedicated TrueType font (\texttt{mytautwo.ttf}). This ensures:
+\begin{itemize}
+    \item \textbf{Mathematical Integration:} Symbols scale perfectly in subscripts ($\vtau_{\vtau}$) and superscripts.
+    \item \textbf{Color Support:} Symbols dynamically respond to color commands, e.g., {\color{red}\vtau} or {\color{blue}\atau}.
+    \item \textbf{Mode Independence:} Commands work in both text and math mode via \texttt{\textbackslash ensuremath}.
+\end{itemize}
+
+\section{Usage}
+
+\begin{quote}
+\textbf{\color{red}{Important:}} This package requires the use of \textbf{LuaLaTeX} or \textbf{XeLaTeX}. Compilation with \texttt{pdflatex} will result in a fatal error, as the \texttt{fontspec} package is used to handle the custom vector font.
+\end{quote}
+
+The following commands provide access to the custom glyphs:
+\begin{itemize}
+    \item \verb|\vtau|: \vtau
+    \item \verb|\atau|: \atau
+\end{itemize}
+
+\section{Examples}
+Consider the following statements to compare the visual impact:
+\begin{enumerate}
+    \item Standard: Let $(X, \tau_X)$ be a topological space.
+    \item Variant A: Let $(X, \vtau_X)$ be a topological space.
+    \item Variant B: Let $(X, \atau_X)$ be a topological space.
+\end{enumerate}
+
+\noindent The authors suggest that notations like $(X, \vtau_X)$ and $(X, \atau_X)$ provide a more elegant visual impact compared to the standard Computer Modern $(X, \tau_X)$.
+
+\end{document}

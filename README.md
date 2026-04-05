@@ -1,19 +1,39 @@
-# mystyletau
+# mystyletau — Custom Tau glyphs for topology
 
-Due nuovi simboli personalizzati per la topologia in LaTeX.
+**Authors:** Antonello Meccariello & Francesco Meccariello 
+**Version:** 2.0 (2026-04-05)  
+**License:** LPPL 1.3c
 
-## Anteprima dei simboli
-![Simbolo Tau 1](mytau.png)
-![Simbolo Tau 2](mytau2.png)
+## Description
+The `mystyletau` package provides two unique graphical variants of the Tau symbol: `\vtau` and `\atau`. 
 
+## Technical Workflow
+The custom symbols were first designed in **Inkscape** and saved as `.svg` files (now saved in the \src directory). 
+These vectors were then imported into the **IcoMoon App** (https://icomoon.io/app) 
+to be converted into high-quality font glyphs and exported as the final 
+`mytautwo.ttf` file.
 
-## Installazione rapida se non hai l'utlima versione di Latex.
-1. Scarica il file `mystyletau.sty` da questo repository.
-2. Copialo nella cartella del tuo documento `.tex`.
-3. Aggiungi `\usepackage{mystyletau}` nel preambolo.
+**Major update in v2.0:** The symbols are no longer loaded as external PDF images. They are now implemented as true vector glyphs within a dedicated TrueType font (`mytautwo.ttf`). This allows the symbols to:
+- Change color dynamically (compatible with `xcolor`).
+- Scale perfectly in all math sizes (subscripts, superscripts).
+- Support `\ensuremath` for use in both text and math mode.
+- Feature custom kerning for mathematical subscripts (e.g., specific spacing for `\vtau_X`).
 
-## SE HAI L'ULTIMA VERSIONE LATEX: 
-È sufficiente aggiungere '\usepackage{mystyletau}' nel preambolo.
+## Requirements
+- **Engine:** LuaLaTeX or XeLaTeX is **required**. This package will not work with pdfLaTeX because it relies on `fontspec` to load TrueType fonts.
+- **Packages:** `fontspec`, `amsmath`.
 
-## Link ufficiali
-- **CTAN:** [https://ctan.org/pkg/mystyletau](https://ctan.org/pkg/mystyletau)
+## Files included
+- `mystyletau.sty`: The LaTeX package file.
+- `mytautwo.ttf`: The TrueType font file containing the glyphs.
+- `mystyletau.pdf`: Package documentation.
+- `mystyletau.tex`: Documentation source.
+- src/: Directory containing the original SVG source files for the glyphs.
+
+## Installation
+1. Copy `mystyletau.sty` to `.../texmf/tex/latex/mystyletau/`
+2. Copy `mytautwo.ttf` to `.../texmf/fonts/truetype/public/mystyletau/`
+3. Update your filename database (run `texhash` and `luaotfload-tool --update`).
+
+## License
+This work may be distributed and/or modified under the conditions of the LaTeX Project Public License, either version 1.3c of this license or (at your option) any later version.
