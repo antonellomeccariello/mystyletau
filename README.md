@@ -1,3 +1,5 @@
+![Descrizione della prima foto](mytau.png)
+![Descrizione della seconda foto](mytau2.png)
 # mystyletau — Custom Tau glyphs for topology
 
 **Authors:** Antonello Meccariello & Francesco Meccariello 
@@ -30,10 +32,13 @@ to be converted into high-quality font glyphs and exported as the final
 - `mystyletau.tex`: Documentation source.
 - src/: Directory containing the original SVG source files for the glyphs.
 
-## Installation
+## Installation 1: If you have the latest version of Latex:
+it's sufficiente to use: "\usepackage{mystyletau}" in the preamble.
+## Installation 2 - MANUAL INSTALLATION, macOS - : If you DON'T have the latest version of Latex 
 1. Copy `mystyletau.sty` to `.../texmf/tex/latex/mystyletau/`
 2. Copy `mytautwo.ttf` to `.../texmf/fonts/truetype/public/mystyletau/`
-3. Update your filename database (run `texhash` and `luaotfload-tool --update`).
+3. Update your filename database (run `texhash` and `luaotfload-tool --update`, RUN ON TERMINAL).
+
 
 ## License
 This work may be distributed and/or modified under the conditions of the LaTeX Project Public License, either version 1.3c of this license or (at your option) any later version.
